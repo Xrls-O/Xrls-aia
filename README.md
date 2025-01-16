@@ -25,16 +25,7 @@ Este es un bot de Discord que utiliza `discord.js` para interactuar con el servi
 Ejecuta el bot con el siguiente comando:
 
 ```sh
-npm start
-
-[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/zcz5vTXK)
-# [/] Slash command builder!
-### Español / Spanish
-## Info breve:
-- Simple SlashCommandBuilder (command handler), para tener tu proyecto un poco más ordenado!
-## Adicional:
-+ (+) Recuerda agregar el token y la ID de tu bot al archivo JSON.
-```json
+npm
 
 ```
 + (+) Clonar repositorio
