@@ -36,11 +36,7 @@ Este es un bot de Discord que utiliza `discord.js` para interactuar con el servi
 ## Configuración
 
 1. Crea un archivo `.env` en la raíz del proyecto con el siguiente contenido:
-    ```
-    TOKEN=TU_DISCORD_BOT_TOKEN
-    CLIENT_ID=TU_CLIENT_ID
-    PUBLIC_KEY=TU_CLAVE_PUBLICA
-    PASSWORD=TU_PASSWORD
+    ``
     ```
 2. Llena los valores de `TOKEN`, `CLIENT_ID`, `PUBLIC_KEY` y `PASSWORD` con la información de tu bot.
 
