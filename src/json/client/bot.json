@@ -1,6 +1,5 @@
 {
-    "token": "TU_DISCORD_BOT_TOKEN",
-    "clientId": "TU_CLIENT_ID",
-    "publicKey": "TU_CLAVE_PUBLICA",
-    "password": "TU_PASSWORD"
+    "token": "YOUR_DISCORD_BOT_TOKEN",
+    "clientId": "YOUR_CLIENT_ID",
+    "publicKey": "YOUR_PUBLIC_KEY"
 }
