@@ -35,15 +35,11 @@ npm start
 ## Adicional:
 + (+) Recuerda agregar el token y la ID de tu bot al archivo JSON.
 ```json
-{
-    "BOT_ID": "DATA_ID",
-    "BOT_TOKEN": "DATA_TOKEN",
-    "MONGO_URL": "MONGO_URL"
-}
+
 ```
 + (+) Clonar repositorio
 ```git
-git clone https://github.com/Xrls-O/Xrls-ai
+git clone [https://github.com/Xrls-O/Xrls-aia] 
 ```
 + (/) Mover los archivos afuera para el correcto funcionamiento ✔️
 ```git
