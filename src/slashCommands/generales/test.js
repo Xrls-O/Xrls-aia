@@ -1,10 +1,7 @@
-const { SlashCommandBuilder } = require('discord.js');
-
 module.exports = {
-    data: new SlashCommandBuilder()
-        .setName('test')
-        .setDescription('Un comando de prueba'),
+    name: 'test',
+    description: 'Comando de prueba',
     async execute(interaction) {
-        await interaction.reply('¡Prueba exitosa!');
+        await interaction.reply('¡El bot está funcionando correctamente!');
     },
 };
