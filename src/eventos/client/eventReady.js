@@ -1,7 +1,3 @@
-module.exports = {
-    name: 'ready',
-    once: true,
-    execute(client) {
-        console.log(`¡Listo! Conectado como ${client.user.tag}`);
-    },
+module.exports = (client) => {
+    console.log(`Logged in as ${client.user.tag}!`);
 };
