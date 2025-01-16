@@ -1,44 +1,28 @@
-const { Client, GatewayIntentBits, Collection } = require('discord.js');
+const { Client, Intents } = require('discord.js');
 const fs = require('fs');
-const path = require('path');
-require('dotenv').config();
-
-// EnumResolvers para constantes
-const EnumResolvers = {
-    CWD: path.resolve(__dirname),
-};
-
-// Inicialización del cliente Discord con intenciones
-const client = new Client({
-    intents: [
-        GatewayIntentBits.Guilds,
-        GatewayIntentBits.GuildMessages,
-        GatewayIntentBits.MessageContent,
-    ],
-});
-
-client.commands = new Collection();
-
-const handlers = ['builder', 'eventos'];
-handlers.forEach(handler => {
-    require(`./handlers/all/${handler}`)(client);
-});
+const config = require('./json/client/bot.json');
+const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 client.once('ready', () => {
-    console.log(`¡Listo! Conectado como ${client.user.tag}`);
-    // Inicializar intención en la nube aquí
-    initializeCloudIntent();
+    console.log('Ready!');
 });
 
-client.on('messageCreate', message => {
-    if (message.content === '!ping') {
-        message.channel.send('Pong!');
+client.on('interactionCreate', async interaction => {
+    if (!interaction.isCommand()) return;
+
+    const command = client.commands.get(interaction.commandName);
+
+    if (!command) return;
+
+    try {
+        await command.execute(interaction);
+    } catch (error) {
+        console.error(error);
+        await interaction.reply({ content: 'Hubo un error ejecutando este comando!', ephemeral: true });
     }
 });
 
-function initializeCloudIntent() {
-    // Lógica para inicializar la intención en la nube
-    console.log('Intención en la nube inicializada');
-}
+require('./handlers/all/builder')(client);
+require('./handlers/all/eventos')(client);
 
-client.login(process.env.TOKEN);
+client.login(config.token);
